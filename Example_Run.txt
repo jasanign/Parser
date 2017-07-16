@@ -1,0 +1,78 @@
+
+Example Output that assumes Left Associativity for all operators except
+for exponentiation (which has right associativity)
+
+parser
+Please enter expression: 2 - @ < 2;
+===> '@'
+Lexical Error: not a lexeme
+
+Please enter expression: 8-cat;
+===> 'cat'
+Lexical Error: not a lexeme
+
+Please enter expression: cat-9;
+===> 'cat'
+Lexical Error: not a lexeme
+
+Please enter expression: 9+2;
+Syntax OK
+Value is 11
+
+Please enter expression: 3 ^ 2;
+Syntax OK
+Value is 9
+
+Please enter expression: 2 ^ 2 ^         3;
+Syntax OK
+Value is 256
+
+Please enter expression: (2^2)^3;
+Syntax OK
+Value is 64
+
+Please enter expression: 2^(2^3);
+Syntax OK
+Value is 256
+
+Please enter expression: 6-7+8;
+Syntax OK
+Value is 7
+
+Please enter expression: (6-7)+8;
+Syntax OK
+Value is 7
+
+Please enter expression: 6-(7+8);
+Syntax OK
+Value is -9
+
+Please enter expression: 1 + 2 < 9;
+Syntax OK
+Value is 2
+
+Please enter expression: 1 + 7 == 9 < 2;
+Syntax OK
+Value is 2
+
+Please enter expression: 9<2;
+Syntax OK
+Value is 0
+
+Please enter expression: 1== 0;
+Syntax OK
+Value is 0
+
+Please enter expression: 1 == 0
+Syntax Error
+
+Please enter expression: 4 + 8 * 10 < 9;
+Syntax OK
+Value is 4
+
+Please enter expression: 8-9-(7*6;
+===> ')' expected
+Syntax Error
+
+Please enter expression: q
+Goodbye!
