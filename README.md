@@ -6,16 +6,16 @@ This project is a basic interpreter in C language for arithmetic expressions as 
 
 This parser uses the following grammar:
 
-	<bexpr> ? <expr>;
-	<expr> ? <term> <ttail>
-	<ttail> ? <add_sub_tok> <term> <ttail> | epsilon
-	<term> ? <stmt> <stail>
-	<stail> ? <mult_div_tok> <stmt> <stail> | epsilon
-	<stmt> ? <factor> <ftail>
-	<ftail> ? <compare_tok> <factor> <ftail> | epsilon
-	<factor> ? <expp> ^ <factor> | <expp>
-	<expp> ? ( <expr> ) | <num>
-	<add_sub_tok> ? + | -
-	<mul_div_tok> ? * | /
-	<compare_tok> ? < | > | <= | >= | != | ==
-	<num> ? {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 }+
+	<bexpr> ::= <expr>;
+	<expr> ::= <term> <ttail>
+	<ttail> ::= <add_sub_tok> <term> <ttail> | epsilon
+	<term> ::= <stmt> <stail>
+	<stail> ::= <mult_div_tok> <stmt> <stail> | epsilon
+	<stmt> ::= <factor> <ftail>
+	<ftail> ::= <compare_tok> <factor> <ftail> | epsilon
+	<factor> ::= <expp> ^ <factor> | <expp>
+	<expp> ::= ( <expr> ) | <num>
+	<add_sub_tok> ::= + | -
+	<mul_div_tok> ::= * | /
+	<compare_tok> ::= < | > | <= | >= | != | ==
+	<num> ::= {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 }+
